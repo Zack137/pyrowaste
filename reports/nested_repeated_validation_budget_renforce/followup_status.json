@@ -1,0 +1,7 @@
+﻿{
+    "status":  "failed",
+    "step":  "followup",
+    "message":  "C:\\Users\\LENOVO\\Desktop\\data set 2\\experiments\\generate_optuna_scientific_evidence.py:2462: UserWarning: Courbe d\u0027apprentissage non gÚnÚrÚe : learning_curve_metrics.csv absent. Aucune valeur de substitution n\u0027a ÚtÚ inventÚe.",
+    "updated_at":  "2026-07-25T23:52:57.8676893-04:00",
+    "validation_pid":  19760
+}

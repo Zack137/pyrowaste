@@ -1,0 +1,5 @@
+﻿Strategie,Lignes_reelles_initiales,Lignes_train_effectives,Lignes_synthetiques_ou_repliquees,Note_scientifique
+Aucune augmentation,800,800,0,800 observations réelles; référence sans données synthétiques
+Bootstrap x2,800,1600,800,Rééchantillonnage avec remise du train; n'ajoute pas d'information
+Jitter gaussien x2,800,1600,800,"Bruit 2 % de l'écart-type sur les 5 entrées, borné au domaine train"
+Mixup régression x2,800,1600,800,Combinaisons convexes train-only des entrées et des 8 sorties

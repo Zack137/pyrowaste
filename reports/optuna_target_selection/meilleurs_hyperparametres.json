@@ -1,0 +1,316 @@
+{
+  "Ridge polynomial Optuna": {
+    "Solid_Yield_pct": {
+      "degree": 1,
+      "alpha": 33.995569865049816,
+      "interaction_only": false
+    },
+    "Liquid_Yield_pct": {
+      "degree": 1,
+      "alpha": 28.098153541776636,
+      "interaction_only": false
+    },
+    "Gas_Yield_pct": {
+      "degree": 1,
+      "alpha": 74.80821287608491,
+      "interaction_only": false
+    },
+    "HBr_pct": {
+      "degree": 1,
+      "alpha": 0.5806420173012931,
+      "interaction_only": false
+    },
+    "Br2_pct": {
+      "degree": 1,
+      "alpha": 0.44092950068286535,
+      "interaction_only": false
+    },
+    "HCl_pct": {
+      "degree": 1,
+      "alpha": 0.833503910924193,
+      "interaction_only": false
+    },
+    "Cl2_pct": {
+      "degree": 1,
+      "alpha": 1.0686536191904754,
+      "interaction_only": false
+    },
+    "HF_pct": {
+      "degree": 1,
+      "alpha": 34.24764643413109,
+      "interaction_only": false
+    }
+  },
+  "Extra Trees Optuna": {
+    "Solid_Yield_pct": {
+      "n_estimators": 280,
+      "max_depth": 6,
+      "min_samples_split": 6,
+      "min_samples_leaf": 2,
+      "max_features": 0.5918196276796828,
+      "bootstrap": true
+    },
+    "Liquid_Yield_pct": {
+      "n_estimators": 160,
+      "max_depth": 6,
+      "min_samples_split": 10,
+      "min_samples_leaf": 2,
+      "max_features": 0.7666245217226955,
+      "bootstrap": false
+    },
+    "Gas_Yield_pct": {
+      "n_estimators": 400,
+      "max_depth": 10,
+      "min_samples_split": 4,
+      "min_samples_leaf": 6,
+      "max_features": 0.6442728641106585,
+      "bootstrap": true
+    },
+    "HBr_pct": {
+      "n_estimators": 320,
+      "max_depth": 6,
+      "min_samples_split": 10,
+      "min_samples_leaf": 2,
+      "max_features": 0.7714137004329534,
+      "bootstrap": true
+    },
+    "Br2_pct": {
+      "n_estimators": 440,
+      "max_depth": 6,
+      "min_samples_split": 9,
+      "min_samples_leaf": 1,
+      "max_features": 0.9086583126111912,
+      "bootstrap": true
+    },
+    "HCl_pct": {
+      "n_estimators": 400,
+      "max_depth": 6,
+      "min_samples_split": 9,
+      "min_samples_leaf": 3,
+      "max_features": 0.7325622328043956,
+      "bootstrap": false
+    },
+    "Cl2_pct": {
+      "n_estimators": 520,
+      "max_depth": 6,
+      "min_samples_split": 9,
+      "min_samples_leaf": 2,
+      "max_features": 0.6261894799010524,
+      "bootstrap": true
+    },
+    "HF_pct": {
+      "n_estimators": 520,
+      "max_depth": 16,
+      "min_samples_split": 10,
+      "min_samples_leaf": 6,
+      "max_features": 0.4531296537198425,
+      "bootstrap": true
+    }
+  },
+  "MLP Optuna": {
+    "Solid_Yield_pct": {
+      "n_layers": 1,
+      "activation": "tanh",
+      "alpha": 0.002130643793722127,
+      "learning_rate_init": 0.004978601636761351,
+      "batch_size": 32,
+      "units_layer_1": 4
+    },
+    "Liquid_Yield_pct": {
+      "n_layers": 1,
+      "activation": "tanh",
+      "alpha": 0.0019204477373456076,
+      "learning_rate_init": 0.00099779078250143,
+      "batch_size": 64,
+      "units_layer_1": 2
+    },
+    "Gas_Yield_pct": {
+      "n_layers": 1,
+      "activation": "relu",
+      "alpha": 0.04293805010631895,
+      "learning_rate_init": 0.00022611946436469066,
+      "batch_size": 32,
+      "units_layer_1": 4
+    },
+    "HBr_pct": {
+      "n_layers": 2,
+      "activation": "tanh",
+      "alpha": 0.06242146218182173,
+      "learning_rate_init": 0.0033169594724892994,
+      "batch_size": 32,
+      "units_layer_1": 4,
+      "units_layer_2": 2
+    },
+    "Br2_pct": {
+      "n_layers": 1,
+      "activation": "tanh",
+      "alpha": 0.015542300276098922,
+      "learning_rate_init": 0.0007893310236683775,
+      "batch_size": 16,
+      "units_layer_1": 2
+    },
+    "HCl_pct": {
+      "n_layers": 1,
+      "activation": "relu",
+      "alpha": 0.05607518773227513,
+      "learning_rate_init": 0.0034466917991715844,
+      "batch_size": 16,
+      "units_layer_1": 2
+    },
+    "Cl2_pct": {
+      "n_layers": 1,
+      "activation": "tanh",
+      "alpha": 0.0004793032119198468,
+      "learning_rate_init": 0.0028647177048371966,
+      "batch_size": 64,
+      "units_layer_1": 2
+    },
+    "HF_pct": {
+      "n_layers": 1,
+      "activation": "relu",
+      "alpha": 0.09902746646792145,
+      "learning_rate_init": 0.0026073912839800497,
+      "batch_size": 64,
+      "units_layer_1": 2
+    }
+  },
+  "Hybride 2 branches MLP + XGBoost Optuna": {
+    "Solid_Yield_pct": {
+      "n_layers": 1,
+      "activation": "tanh",
+      "alpha": 0.007278603015431082,
+      "learning_rate_init": 0.004214727251469359,
+      "batch_size": 32,
+      "units_layer_1": 4,
+      "xgb_n_estimators": 120,
+      "xgb_max_depth": 2,
+      "xgb_learning_rate": 0.021463233293575606,
+      "xgb_min_child_weight": 5.122673139966612,
+      "xgb_subsample": 0.895766137250589,
+      "xgb_colsample_bytree": 0.7589653629570015,
+      "xgb_reg_alpha": 0.2297546701147062,
+      "xgb_reg_lambda": 0.10069900840557462,
+      "mlp_weight": 0.767261617382776
+    },
+    "Liquid_Yield_pct": {
+      "n_layers": 2,
+      "activation": "tanh",
+      "alpha": 0.0004600218661476153,
+      "learning_rate_init": 0.0023141445525617986,
+      "batch_size": 64,
+      "units_layer_1": 2,
+      "units_layer_2": 2,
+      "xgb_n_estimators": 180,
+      "xgb_max_depth": 2,
+      "xgb_learning_rate": 0.06871794217173506,
+      "xgb_min_child_weight": 3.04306831661653,
+      "xgb_subsample": 0.8031115299037249,
+      "xgb_colsample_bytree": 0.7759215916008884,
+      "xgb_reg_alpha": 0.007020385415200672,
+      "xgb_reg_lambda": 1.7858263287322498,
+      "mlp_weight": 0.5553701613528201
+    },
+    "Gas_Yield_pct": {
+      "n_layers": 1,
+      "activation": "relu",
+      "alpha": 1.1851032443270403e-05,
+      "learning_rate_init": 0.0002409480356371151,
+      "batch_size": 32,
+      "units_layer_1": 4,
+      "xgb_n_estimators": 80,
+      "xgb_max_depth": 2,
+      "xgb_learning_rate": 0.08284703727883236,
+      "xgb_min_child_weight": 2.4691220218754406,
+      "xgb_subsample": 0.949623117484471,
+      "xgb_colsample_bytree": 0.9115232307965919,
+      "xgb_reg_alpha": 0.0014566580902890384,
+      "xgb_reg_lambda": 2.466941840931261,
+      "mlp_weight": 0.2267777110865885
+    },
+    "HBr_pct": {
+      "n_layers": 1,
+      "activation": "tanh",
+      "alpha": 0.07676892280416311,
+      "learning_rate_init": 0.00498175276568083,
+      "batch_size": 32,
+      "units_layer_1": 2,
+      "xgb_n_estimators": 180,
+      "xgb_max_depth": 3,
+      "xgb_learning_rate": 0.023100356585847363,
+      "xgb_min_child_weight": 2.1432425420181653,
+      "xgb_subsample": 0.7992499431118721,
+      "xgb_colsample_bytree": 0.7103540164768343,
+      "xgb_reg_alpha": 0.0615628199644545,
+      "xgb_reg_lambda": 1.1843152665879644,
+      "mlp_weight": 0.6785599144006866
+    },
+    "Br2_pct": {
+      "n_layers": 1,
+      "activation": "relu",
+      "alpha": 6.548335478675717e-05,
+      "learning_rate_init": 0.0008238953253192127,
+      "batch_size": 16,
+      "units_layer_1": 4,
+      "xgb_n_estimators": 120,
+      "xgb_max_depth": 4,
+      "xgb_learning_rate": 0.05106036841435155,
+      "xgb_min_child_weight": 2.307863144530523,
+      "xgb_subsample": 0.8818454533920296,
+      "xgb_colsample_bytree": 0.9512234612532954,
+      "xgb_reg_alpha": 0.27645863585135727,
+      "xgb_reg_lambda": 9.94524370191283,
+      "mlp_weight": 0.6981054174400414
+    },
+    "HCl_pct": {
+      "n_layers": 1,
+      "activation": "relu",
+      "alpha": 2.076438892632336e-05,
+      "learning_rate_init": 0.004700932641465574,
+      "batch_size": 64,
+      "units_layer_1": 4,
+      "xgb_n_estimators": 80,
+      "xgb_max_depth": 2,
+      "xgb_learning_rate": 0.053542825431883795,
+      "xgb_min_child_weight": 3.848234714220886,
+      "xgb_subsample": 0.8137519794738993,
+      "xgb_colsample_bytree": 0.8343698623873812,
+      "xgb_reg_alpha": 0.0018966686618129335,
+      "xgb_reg_lambda": 1.3588063471060676,
+      "mlp_weight": 0.4147965032732337
+    },
+    "Cl2_pct": {
+      "n_layers": 1,
+      "activation": "relu",
+      "alpha": 9.610663201724764e-05,
+      "learning_rate_init": 0.000846671975926687,
+      "batch_size": 64,
+      "units_layer_1": 4,
+      "xgb_n_estimators": 80,
+      "xgb_max_depth": 2,
+      "xgb_learning_rate": 0.055194771930334015,
+      "xgb_min_child_weight": 1.3558385779030524,
+      "xgb_subsample": 0.8683049194433065,
+      "xgb_colsample_bytree": 0.7851271014815089,
+      "xgb_reg_alpha": 0.03792746624857275,
+      "xgb_reg_lambda": 2.5270492659134605,
+      "mlp_weight": 0.6323144025765342
+    },
+    "HF_pct": {
+      "n_layers": 1,
+      "activation": "relu",
+      "alpha": 0.004271770608232486,
+      "learning_rate_init": 0.0001368809291057213,
+      "batch_size": 32,
+      "units_layer_1": 4,
+      "xgb_n_estimators": 80,
+      "xgb_max_depth": 3,
+      "xgb_learning_rate": 0.025827465683132805,
+      "xgb_min_child_weight": 4.889825326353983,
+      "xgb_subsample": 0.8036579146705874,
+      "xgb_colsample_bytree": 0.9332028134514955,
+      "xgb_reg_alpha": 0.05275146423546653,
+      "xgb_reg_lambda": 0.21356969123131037,
+      "mlp_weight": 0.7963886154556343
+    }
+  }
+}

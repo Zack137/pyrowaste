@@ -1,0 +1,9 @@
+﻿Sortie,Meilleur modèle
+Solid_Yield_pct,Ridge polynomial Optuna
+Liquid_Yield_pct,Ridge polynomial Optuna
+Gas_Yield_pct,MLP Optuna
+HBr_pct,Ridge polynomial Optuna
+Br2_pct,Ridge polynomial Optuna
+HCl_pct,Hybride 2 branches MLP + XGBoost Optuna
+Cl2_pct,Ridge polynomial Optuna
+HF_pct,Hybride 2 branches MLP + XGBoost Optuna

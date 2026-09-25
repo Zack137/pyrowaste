@@ -1,0 +1,11 @@
+{
+  "data_path": "C:\\Users\\LENOVO\\Desktop\\data set 2\\e_waste_pyrolysis_merged_1000.csv",
+  "rows": 1000,
+  "raw_inputs": 5,
+  "derived_inputs": 10,
+  "outputs": 8,
+  "folds": 5,
+  "repeats": 1,
+  "splits_per_model": 5,
+  "elapsed_seconds": 207.98625980131328
+}

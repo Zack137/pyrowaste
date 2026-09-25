@@ -1,0 +1,17 @@
+﻿model,target,input,n,pearson_r,spearman_rho
+Sélection automatique par sortie,Solid_Yield_pct,Temperature_C,1000,-0.016694430458593947,-0.00981107309853067
+Sélection automatique par sortie,Solid_Yield_pct,Concentration_liquide_chimique_kg,1000,0.004869966597865089,0.01133717639821444
+Sélection automatique par sortie,Liquid_Yield_pct,Temperature_C,1000,0.015484425086840147,0.002739042751219839
+Sélection automatique par sortie,Liquid_Yield_pct,Concentration_liquide_chimique_kg,1000,-0.007049764447869032,-0.016694181201610734
+Sélection automatique par sortie,Gas_Yield_pct,Temperature_C,1000,0.015230974738854139,0.02115974366873162
+Sélection automatique par sortie,Gas_Yield_pct,Concentration_liquide_chimique_kg,1000,0.002252335818707716,0.008485192776195135
+Sélection automatique par sortie,HBr_pct,Temperature_C,1000,0.017983039564046184,0.0017723591928775354
+Sélection automatique par sortie,HBr_pct,Concentration_liquide_chimique_kg,1000,0.010419421781399003,0.004126655240852306
+Sélection automatique par sortie,Br2_pct,Temperature_C,1000,0.0034940006297721274,0.00427770224877198
+Sélection automatique par sortie,Br2_pct,Concentration_liquide_chimique_kg,1000,0.002086548619406144,0.007330455309678511
+Sélection automatique par sortie,HCl_pct,Temperature_C,1000,0.013479647825003244,-0.00163307779855192
+Sélection automatique par sortie,HCl_pct,Concentration_liquide_chimique_kg,1000,0.0072345691754257925,-0.000867661101929631
+Sélection automatique par sortie,Cl2_pct,Temperature_C,1000,0.02333114537508591,0.03554910834147821
+Sélection automatique par sortie,Cl2_pct,Concentration_liquide_chimique_kg,1000,0.012359354954778691,0.025477262356124117
+Sélection automatique par sortie,HF_pct,Temperature_C,1000,0.03296453674581427,0.027371107041353242
+Sélection automatique par sortie,HF_pct,Concentration_liquide_chimique_kg,1000,0.017840829007666443,0.026377707499689488

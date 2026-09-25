@@ -1,0 +1,45 @@
+{
+  "created_at": "2026-07-24T01:44:50.499315+00:00",
+  "profile": "heavy",
+  "dataset_file": "e_waste_pyrolysis_merged_1000.csv",
+  "dataset_sha256": "55bbcc208062f6b8c7f327e225a0435eefd698a3a0c6b968efcfd593599d6776",
+  "dataset_rows": 1000,
+  "raw_inputs": 5,
+  "derived_inputs": 10,
+  "model_features": 15,
+  "targets": [
+    "Solid_Yield_pct",
+    "Liquid_Yield_pct",
+    "Gas_Yield_pct",
+    "HBr_pct",
+    "Br2_pct",
+    "HCl_pct",
+    "Cl2_pct",
+    "HF_pct"
+  ],
+  "validation": {
+    "method": "RepeatedStratifiedKFold on temperature deciles",
+    "splits": 5,
+    "repeats": 5,
+    "total_folds": 25,
+    "same_folds_for_all_models": true,
+    "feedstock_grouping_possible": false,
+    "reason": "Feedstock was removed from the active database at user request."
+  },
+  "var_applicability": {
+    "applicable": false,
+    "reason": "Rows are independent experiments without ordered multivariate time series or lag structure. VAR would violate its data assumptions.",
+    "kernel_alternatives_executed": [
+      "Kernel Ridge RBF",
+      "SVR RBF"
+    ]
+  },
+  "nested_optuna": {
+    "executed": false,
+    "scope": "not executed inside this repeated-CV run",
+    "separate_study_available": true,
+    "status": "The fixed Optuna architecture in this profile is not nested. A separate compact nested study is reported only from the nested_optuna_* files."
+  },
+  "external_validation_available": false,
+  "scientific_status": "exploratory prototype, not industrial validation"
+}

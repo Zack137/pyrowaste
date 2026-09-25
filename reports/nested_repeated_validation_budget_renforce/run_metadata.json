@@ -1,0 +1,203 @@
+{
+  "status": "completed",
+  "scientific_status": "prototype exploratoire; aucune validation industrielle",
+  "problem": {
+    "type": "régression supervisée multi-sorties",
+    "n_outputs": 8,
+    "targets": [
+      "Solid_Yield_pct",
+      "Liquid_Yield_pct",
+      "Gas_Yield_pct",
+      "HBr_pct",
+      "Br2_pct",
+      "HCl_pct",
+      "Cl2_pct",
+      "HF_pct"
+    ],
+    "raw_inputs": [
+      "Concentration_liquide_chimique_kg",
+      "Temperature_C",
+      "Temps_reaction_min",
+      "Heating_rate_C_min",
+      "Taille_particules_mm"
+    ],
+    "engineered_inputs": [
+      "Concentration_liquide_chimique_kg",
+      "Temperature_C",
+      "Temps_reaction_min",
+      "Heating_rate_C_min",
+      "Taille_particules_mm",
+      "Thermal_Severity",
+      "Heating_Exposure",
+      "Temperature_Squared",
+      "Temperature_Heating_Interaction",
+      "Temperature_Particle_Ratio",
+      "Log_Reaction_Time",
+      "Concentration_Particle_Ratio",
+      "Thermal_Material_Load",
+      "Concentration_Time_Interaction",
+      "Concentration_Heating_Interaction"
+    ],
+    "independent_target_estimators": true,
+    "interpretation": "Chaque famille assemble huit régressions supervisées indépendantes dans une sortie multi-dimensionnelle."
+  },
+  "dataset": {
+    "path": "C:\\Users\\LENOVO\\Desktop\\data set 2\\e_waste_pyrolysis_merged_1000.csv",
+    "sha256": "55bbcc208062f6b8c7f327e225a0435eefd698a3a0c6b968efcfd593599d6776",
+    "rows_after_cleaning": 1000,
+    "temperature_missing_count": 0
+  },
+  "models": {
+    "naive": "Prédicteur naïf (moyenne)",
+    "optuna_families": [
+      "Ridge polynomial Optuna",
+      "Extra Trees Optuna",
+      "MLP Optuna",
+      "Hybride 2 branches MLP + XGBoost Optuna"
+    ],
+    "automatic_selection": "Sélection automatique par sortie",
+    "mlp_reduced_search_space": true,
+    "hybrid_two_branch_design": {
+      "mlp_branch": "StandardScaler + MLP compact",
+      "xgboost_branch": "XGBRegressor peu profond",
+      "fusion": "poids convexe optimisé dans les plis internes",
+      "standalone_xgboost_active": false
+    },
+    "mlp_allowed_hidden_architectures": [
+      [
+        2
+      ],
+      [
+        4
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "mlp_max_parameters_per_target": 77,
+    "mlp_smallest_inner_train_observations": 533,
+    "mlp_worst_case_inner_observations_per_parameter": 6.922077922077922,
+    "mlp_search_space_rule_5x_inner_satisfied": true,
+    "mlp_rule_5x_outer_folds_satisfied": true,
+    "mlp_rule_5x_smallest_inner_folds_satisfied": true,
+    "mlp_complexity_export": "mlp_complexity.csv"
+  },
+  "validation": {
+    "outer_method": "RepeatedStratifiedKFold sur quantiles de température",
+    "requested_temperature_bins": 10,
+    "actual_temperature_bins": 10,
+    "outer_splits": 5,
+    "repeats": 5,
+    "total_outer_folds": 25,
+    "inner_method": "KFold mélangé, identique entre familles et sorties",
+    "inner_splits": 3,
+    "trials_per_family_target_outer_fold": 20,
+    "parallel_jobs": 4,
+    "total_optuna_studies": 800,
+    "total_optuna_trials_requested": 16000,
+    "same_outer_folds_for_all_models": true,
+    "outer_validation_used_for_tuning": false,
+    "preprocessing_fitted_inside_inner_fold": true,
+    "inner_outer_overlap_verified_zero": true,
+    "selection_rule": "RMSE CV interne normalisée minimale, séparément par sortie",
+    "predictions": "hors pli externes, brutes, sans post-traitement physique",
+    "external_campaign_available": false
+  },
+  "uncertainty": {
+    "confidence_level": 0.95,
+    "primary_sampling_unit": "répétition OOF complète",
+    "method": "intervalle bilatéral de Student sur les métriques agrégées de chaque répétition",
+    "fold_level_intervals": "exportés à titre descriptif seulement; les plis et leurs ensembles d'entraînement ne sont pas indépendants",
+    "confidence_intervals_estimable": true,
+    "quick_mode_ci_interpretable": true
+  },
+  "naive_comparison": {
+    "strategy": "moyenne de chaque sortie calculée exclusivement sur le pli externe d'entraînement",
+    "paired_same_folds": true
+  },
+  "learning_curve": {
+    "executed": false,
+    "fractions": [],
+    "hyperparameters_retuned_at_each_fraction": false
+  },
+  "limitations": [
+    "Les répétitions réutilisent la même base et ne remplacent pas une campagne expérimentale externe.",
+    "La stratification thermique ne remplace pas un GroupKFold par étude, lot ou feedstock lorsque ces identifiants sont absents.",
+    "Les intervalles mesurent la variabilité des partitions, pas l'incertitude instrumentale ni l'incertitude de domaine.",
+    "La sélection automatique est exploratoire et ne doit pas piloter seule un procédé industriel."
+  ],
+  "implementation": {
+    "shared_training_utility": "src.optuna_training.train_optuna_families",
+    "nested_mode": true,
+    "quick": false,
+    "parallel_jobs": 4,
+    "seed": 42,
+    "checkpointing": {
+      "format_version": 1,
+      "directory": "C:\\Users\\LENOVO\\Desktop\\data set 2\\reports\\nested_repeated_validation_budget_renforce\\checkpoints",
+      "atomic_write": true,
+      "automatic_resume": true,
+      "kept_after_success": true,
+      "dataset_sha256_validated": true,
+      "protocol_signature": "f4c4d95a41593aaa520fd197687b09220ac5af7df2200f46e39bb1b370b3a2b1",
+      "implementation_signature": "91248ca5d6cbc5ae4349996d2d18e6587e9b8c4a8f04e910192f33670afb0f9f",
+      "reused": 0,
+      "written": 25,
+      "ignored_as_incompatible_or_invalid": 0
+    },
+    "python": "3.11.4",
+    "numpy": "2.4.2",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.9.0",
+    "scipy": "1.17.1",
+    "optuna": "4.9.0",
+    "xgboost": "3.2.0",
+    "command": [
+      "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "experiments/run_nested_repeated_optuna_validation.py",
+      "--outer-splits",
+      "5",
+      "--repeats",
+      "5",
+      "--trials",
+      "20",
+      "--inner-splits",
+      "3",
+      "--parallel-jobs",
+      "4",
+      "--output-dir",
+      "reports/nested_repeated_validation_budget_renforce"
+    ],
+    "started_at_utc": "2026-07-25T19:43:25.566368+00:00",
+    "completed_at_utc": "2026-07-26T01:57:47.835848+00:00",
+    "elapsed_seconds": 22462.269297299907
+  },
+  "exports": {
+    "outer_fold_global_metrics": "outer_fold_global_metrics.csv",
+    "outer_fold_output_metrics": "outer_fold_output_metrics.csv",
+    "outer_fold_predictions": "outer_fold_predictions.csv",
+    "repeat_global_metrics": "repeat_global_metrics.csv",
+    "repeat_output_metrics": "repeat_output_metrics.csv",
+    "summary_global_95ci": "summary_global_95ci.csv",
+    "summary_by_output_95ci": "summary_by_output_95ci.csv",
+    "outer_fold_summary_global_95ci": "outer_fold_summary_global_95ci.csv",
+    "outer_fold_summary_by_output_95ci": "outer_fold_summary_by_output_95ci.csv",
+    "inner_selection_by_output": "inner_selection_by_output.csv",
+    "best_family_frequency_by_output": "best_family_frequency_by_output.csv",
+    "recommended_family_by_output": "recommended_family_by_output.csv",
+    "optuna_trials": "optuna_trials.csv",
+    "split_manifest": "split_manifest.csv",
+    "outer_fold_assignments": "outer_fold_assignments.csv",
+    "inner_split_manifest": "inner_split_manifest.csv",
+    "mlp_complexity": "mlp_complexity.csv"
+  },
+  "xlsx": {
+    "created_by_this_script": false,
+    "reason": "Le classeur final est construit séparément à partir des CSV afin de préserver le workflow de vérification du tableur."
+  }
+}

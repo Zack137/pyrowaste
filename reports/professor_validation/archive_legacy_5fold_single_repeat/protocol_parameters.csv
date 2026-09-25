@@ -1,0 +1,17 @@
+﻿Parametre,Valeur
+Protocole,RepeatedKFold 5 plis x 1 repetitions
+Nombre de splits,5
+Graine,42
+Entrees brutes,"Concentration_liquide_chimique_kg, Temperature_C, Temps_reaction_min, Heating_rate_C_min, Taille_particules_mm"
+Features modele,"Concentration_liquide_chimique_kg, Temperature_C, Temps_reaction_min, Heating_rate_C_min, Taille_particules_mm, Thermal_Severity, Heating_Exposure, Temperature_Squared, Temperature_Heating_Interaction, Temperature_Particle_Ratio, Log_Reaction_Time, Concentration_Particle_Ratio, Thermal_Material_Load, Concentration_Time_Interaction, Concentration_Heating_Interaction"
+Sorties,"Solid_Yield_pct, Liquid_Yield_pct, Gas_Yield_pct, HBr_pct, Br2_pct, HCl_pct, Cl2_pct, HF_pct"
+Dummy,moyenne du pli d'apprentissage
+Ridge,alpha=1.0; X et y standardises
+Kernel Ridge RBF,alpha=1.0; gamma=1/15; MultiOutputRegressor; X et y standardises
+SVR RBF,C=10; epsilon=0.1; gamma=scale; MultiOutputRegressor; X et y standardises
+Random Forest,200 arbres; max_features=sqrt; min_samples_leaf=2
+XGBoost,8 x 200 arbres; profondeur=3; learning_rate=0.05; histogramme
+MLP standard,256-128-64; ReLU; Adam; lr=0.0005; batch=64; max_iter=250; early stopping
+NRMSE/std,RMSE du pli / ecart-type global de la sortie
+NRMSE/range,RMSE du pli / etendue globale de la sortie
+IC95,moyenne +/- t de Student * ecart-type / racine(N_splits)

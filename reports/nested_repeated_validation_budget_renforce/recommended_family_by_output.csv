@@ -1,0 +1,9 @@
+﻿target,recommended_family,selected_count,mean_inner_rmse_normalized,std_inner_rmse_normalized,outer_folds,recommendation_stability,rule
+Br2_pct,Ridge polynomial Optuna,23,0.3716571762306129,0.004309124013257641,25,0.92,mode des sélections internes; départage par RMSE interne moyen
+Cl2_pct,Ridge polynomial Optuna,13,0.4100755721162699,0.006608447259202069,25,0.52,mode des sélections internes; départage par RMSE interne moyen
+Gas_Yield_pct,Ridge polynomial Optuna,18,0.9127978125522181,0.005959938000152855,25,0.72,mode des sélections internes; départage par RMSE interne moyen
+HBr_pct,Ridge polynomial Optuna,15,0.3373677783454383,0.0051265695173843915,25,0.6,mode des sélections internes; départage par RMSE interne moyen
+HCl_pct,Ridge polynomial Optuna,17,0.40280069893789905,0.0053483943963043065,25,0.68,mode des sélections internes; départage par RMSE interne moyen
+HF_pct,Ridge polynomial Optuna,12,0.5587883126144898,0.0059209134351775605,25,0.48,mode des sélections internes; départage par RMSE interne moyen
+Liquid_Yield_pct,Ridge polynomial Optuna,24,0.90472210998302,0.006447256855909955,25,0.96,mode des sélections internes; départage par RMSE interne moyen
+Solid_Yield_pct,Ridge polynomial Optuna,24,0.8577896218924757,0.00806042960967524,25,0.96,mode des sélections internes; départage par RMSE interne moyen

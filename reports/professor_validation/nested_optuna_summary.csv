@@ -1,0 +1,2 @@
+outer_folds,inner_folds,trials_per_outer_fold,rmse_normalized_mean,rmse_normalized_std,r2_macro_mean,r2_macro_std,selection_nested,test_set_used_for_selection
+5,3,4,0.652434547143028,0.016313380937417223,0.5734767217703324,0.00735962419279901,True,False

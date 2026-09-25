@@ -1,0 +1,4 @@
+model,architecture,parameters,training_observations,observations_per_parameter,required_observations_5x,required_observations_10x,rule_5_to_10_satisfied
+MLP compact 4,15-4-8,104,500,4.8076923076923075,520,1040,False
+MLP profond 160-96-48,15-160-96-48-8,23064,500,0.021678806798473813,115320,230640,False
+MLP Optuna fixe,15-192-24-16-256-8,14512,500,0.0344542447629548,72560,145120,False

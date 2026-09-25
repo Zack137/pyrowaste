@@ -1,0 +1,15 @@
+{
+  "split": "80 % entraînement / 10 % validation / 10 % test",
+  "model_families": [
+    "Ridge polynomial Optuna",
+    "Extra Trees Optuna",
+    "MLP Optuna",
+    "Hybride 2 branches MLP + XGBoost Optuna"
+  ],
+  "inner_validation": "5-fold CV dans les 80 % d'entraînement",
+  "inner_splits": 5,
+  "trials_per_family_and_target": 50,
+  "parallel_jobs": 4,
+  "target_selection": "RMSE minimale sur les 10 % de validation, séparément par sortie",
+  "test_role": "estimation interne uniquement; la preuve principale est la validation croisée imbriquée répétée"
+}
